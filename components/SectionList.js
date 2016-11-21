@@ -1,22 +1,15 @@
 'use strict';
 
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
-import ReactNative, {
-  StyleSheet,
-  View,
-  Text,
-  NativeModules,
-} from 'react-native';
+var React = require('react');
+var ReactNative = require('react-native');
+var {Component, PropTypes} = React;
+var {StyleSheet, View, Text, NativeModules} = ReactNative;
+var UIManager = NativeModules.UIManager;
 
-const { UIManager } = NativeModules;
+var noop = () => {};
+var returnTrue = () => true;
 
-const noop = () => {};
-const returnTrue = () => true;
-
-export default class SectionList extends Component {
+class SectionList extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -40,7 +33,7 @@ export default class SectionList extends Component {
   }
 
   detectAndScrollToSection(e) {
-    const ev = e.nativeEvent.touches[0];
+    var ev = e.nativeEvent.touches[0];
     //var rect = {width:1, height:1, x: ev.locationX, y: ev.locationY};
     //var rect = [ev.locationX, ev.locationY];
 
@@ -56,8 +49,8 @@ export default class SectionList extends Component {
     //UIManager.findSubviewIn(e.target, rect, viewTag => {
       //this.onSectionSelect(view, true);
     //})
-    const targetY = ev.pageY;
-    const { y, width, height } = this.measure;
+    let targetY = ev.pageY;
+    const { y, height } = this.measure;
     if(!y || targetY < y){
       return;
     }
@@ -69,7 +62,7 @@ export default class SectionList extends Component {
     }
   }
 
-  fixSectionItemMeasure() {
+  componentDidMount() {
     const sectionItem = this.refs.sectionItem0;
 
     this.measureTimer = setTimeout(() => {
@@ -77,38 +70,29 @@ export default class SectionList extends Component {
         //console.log([x, y, width, height, pageX, pageY]);
         this.measure = {
           y: pageY,
-          width,
           height
         };
       })
     }, 0);
-  }
 
-  componentDidMount() {
-    this.fixSectionItemMeasure();
+    //console.log(sectionItem);
   }
-
-  // fix bug when change data 
-  componentDidUpdate() {
-    this.fixSectionItemMeasure();
-  }
-
   componentWillUnmount() {
     this.measureTimer && clearTimeout(this.measureTimer);
   }
 
   render() {
-    const SectionComponent = this.props.component;
-    const sections = this.props.sections.map((section, index) => {
-      const title = this.props.getSectionListTitle ?
+    var SectionComponent = this.props.component;
+    var sections = this.props.sections.map((section, index) => {
+      var title = this.props.getSectionListTitle ?
         this.props.getSectionListTitle(section) :
         section;
 
-      const textStyle = this.props.data[section].length ?
+      var textStyle = this.props.data[section].length ?
         styles.text :
         styles.inactivetext;
 
-      const child = SectionComponent ?
+      var child = SectionComponent ?
         <SectionComponent
           sectionId={section}
           title={title}
@@ -181,15 +165,16 @@ SectionList.propTypes = {
   ])
 };
 
-const styles = StyleSheet.create({
+var styles = StyleSheet.create({
   container: {
     position: 'absolute',
     backgroundColor: 'transparent',
-    alignItems:'flex-end',
+    alignItems:'center',
     justifyContent:'center',
-    right: 5,
+    right: 0,
     top: 0,
-    bottom: 0
+    bottom: 0,
+    width: 15
   },
 
   item: {
@@ -206,3 +191,5 @@ const styles = StyleSheet.create({
     color: '#CCCCCC'
   }
 });
+
+module.exports = SectionList;

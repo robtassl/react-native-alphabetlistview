@@ -1,24 +1,94 @@
 {
-  "name": "react-native-alphabetlistview",
-  "version": "0.2.0",
+  "_args": [
+    [
+      {
+        "raw": "react-native-alphabetlistview",
+        "scope": null,
+        "escapedName": "react-native-alphabetlistview",
+        "name": "react-native-alphabetlistview",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/robcapell/Git/tassl/tassl-react"
+    ]
+  ],
+  "_from": "react-native-alphabetlistview@latest",
+  "_id": "react-native-alphabetlistview@0.2.0",
+  "_inCache": true,
+  "_location": "/react-native-alphabetlistview",
+  "_nodeVersion": "6.0.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/react-native-alphabetlistview-0.2.0.tgz_1462841399234_0.2134481288958341"
+  },
+  "_npmUser": {
+    "name": "sunnylqm",
+    "email": "sunnylqm@qq.com"
+  },
+  "_npmVersion": "3.8.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-alphabetlistview",
+    "scope": null,
+    "escapedName": "react-native-alphabetlistview",
+    "name": "react-native-alphabetlistview",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-alphabetlistview/-/react-native-alphabetlistview-0.2.0.tgz",
+  "_shasum": "471879c0d205ec6acfd9964bcf3a5eb7bf7fc445",
+  "_shrinkwrap": null,
+  "_spec": "react-native-alphabetlistview",
+  "_where": "/Users/robcapell/Git/tassl/tassl-react",
+  "author": {
+    "name": "Johannes Lumpe",
+    "email": "johannes@lum.pe",
+    "url": "https://github.com/johanneslumpe"
+  },
+  "bugs": {
+    "url": "https://github.com/sunnylqm/react-native-alphabetlistview/issues"
+  },
+  "dependencies": {
+    "merge": "^1.2.0"
+  },
   "description": "A Listview with a sidebar to jump to sections directly, based on johanneslumpe's react-native-selectablesectionlistview",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "471879c0d205ec6acfd9964bcf3a5eb7bf7fc445",
+    "tarball": "https://registry.npmjs.org/react-native-alphabetlistview/-/react-native-alphabetlistview-0.2.0.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sunnylqm/react-native-alphabetlistview.git"
-  },
-  "author": "Johannes Lumpe <johannes@lum.pe> (https://github.com/johanneslumpe), sunnylqm <sunnylqm@qq.com> (https://github.com/sunnylqm), Kenton Jacobsen (https://github.com/brokentone)",
-  "license": "MIT",
+  "gitHead": "c346b65128f6441e79c9699457abcf2aafcac715",
+  "homepage": "https://github.com/sunnylqm/react-native-alphabetlistview#readme",
   "keywords": [
     "react-component",
     "react-native",
     "ios",
     "android"
   ],
-  "dependencies": {
-    "merge": "^1.2.0"
-  }
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "sunnylqm",
+      "email": "sunnylqm@qq.com"
+    }
+  ],
+  "name": "react-native-alphabetlistview",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnylqm/react-native-alphabetlistview.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.0"
 }
